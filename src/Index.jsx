@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './Navbar';
+import Navbar from './NavBar';
 import Carousal from './Carousal';
 import Item from './Item';
 import './index.css';
