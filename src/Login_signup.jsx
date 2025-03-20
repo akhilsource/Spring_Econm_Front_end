@@ -12,7 +12,7 @@ const Login_signup = () => {
     e.preventDefault(); 
     setError({ username: false, password: false });
     try {
-      const response = await axios.post("http://127.0.0.1:8080/users/login", {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/login`, {
         username: username,
         password: password,
       });

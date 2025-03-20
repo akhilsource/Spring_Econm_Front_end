@@ -14,7 +14,7 @@ const Cart = () => {
     console.log("Removing item with ID:", itemId);
     try {
       const response = await axios.post(
-        "http://localhost:8080/products/remove_cart",
+        `${process.env.REACT_APP_API_URL}/products/remove_cart`,
         { username, CartItems: itemId },
         {
           headers: {
@@ -29,7 +29,7 @@ const Cart = () => {
   const buyOutCart = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/orders/buy_cart",
+        `${process.env.REACT_APP_API_URL}/orders/buy_cart`,
         {username},
         {
           headers: {
@@ -54,7 +54,7 @@ const Cart = () => {
       const fetchCartItems = async () => {
         try {
           const response = await axios.post(
-            "http://localhost:8080/products/get_all_cart",
+            `${process.env.REACT_APP_API_URL}/products/get_all_cart`,
             { username },
             {
               headers: {
