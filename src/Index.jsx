@@ -19,11 +19,11 @@ function Index() {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await fetch('http://localhost:8080/products/intro_fetch'); // Replace '/api/items' with your API endpoint
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/products/intro_fetch`); // Replace '/api/items' with your API endpoint
                 const data = await response.json();
                 setItems(data); 
             } catch (error) {
-                console.error('Error fetching items:', error);
+                console.error('Error fetching items:', error.message);
             }
         };
 

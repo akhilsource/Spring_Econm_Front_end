@@ -10,7 +10,7 @@ function NavBar() {
     };
 
     const handleCart = () => {
-        navigate('/cart'); // Navigate to the cart page
+        navigate('/cart'); 
     };
 
     return (

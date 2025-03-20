@@ -18,7 +18,7 @@ const Item = ({ imageaddress, image_name, price, rating,product_id }) => {
         const token = sessionStorage.getItem("authToken");
         try {
             const response = await axios.post(
-                "http://localhost:8080/products/add_to_cart",
+                `${import.meta.env.VITE_API_URL}/products/add_to_cart`,
                 {
                     username,
                     productId: product_id,
@@ -47,7 +47,7 @@ const Item = ({ imageaddress, image_name, price, rating,product_id }) => {
         const token = sessionStorage.getItem("authToken");
         try {
             const response = await axios.post(
-                "http://localhost:8080/orders/place-order",
+                `${import.meta.env.VITE_API_URL}/orders/place-order`,
                 {
                     customerUsername:username,
                     productId: product_id,
